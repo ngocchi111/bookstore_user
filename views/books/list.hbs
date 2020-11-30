@@ -1,0 +1,17 @@
+<ul class="thumbnails">
+{{#each books}}
+  <li class="span4">
+    <div class="thumbnail">
+
+      <a class="zoomTool" href="/books/{{_id}}" title="add to cart" style="display: none;"><span class="icon-search"></span> QUICK VIEW</a>
+      <a href="/books/{{_id}}"><img src="{{cover}}" alt=""></a>
+      <div class="caption cntr">
+        <p>{{title}}</p>
+        <p><strong> {{basePrice}} VND</strong></p>
+        <h4><a class="shopBtn" href="#" title="add to cart"> Thêm vào giỏ hàng </a></h4>
+        <br class="clr">
+      </div>
+    </div>
+  </li>
+{{/each}}
+</ul>
