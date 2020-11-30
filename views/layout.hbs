@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Online Book Store</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/style.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+  <div id="./inner">
+    <div id="header">
+      <h1><img src="/images/logo.gif" width="1000" height="63" alt="Online Movie Store" /></h1>
+      <h1 id="naw"><img src="/images/iconlogo.png" width="200" height="100" alt="Online Movie Store" /></h1>
+      <div id="nav"> <a href="/">Trang chủ</a> | <a href="/">Giỏ hàng</a> | <a href="#">trợ giúp</a> |<lu> <a href="/users/signin">Đăng nhập</a> |<a href="/users/signup">Đăng xuất</a> </lu></div> 
+      <!-- end nav -->
+    <!-- end header -->
+    <dl id="browse">
+      <dt>Full Category Lists</dt>
+      <dd class="first"><a href="/books">Danh sách sản phẩm</a></dd>
+      <dd><a href="#">Danh sách yêu thích</a></dd>
+      <dd><a href="#">Được mua nhiều nhất</a></dd>
+      <dd><a href="#">Đã xem</a></dd>
+      <dd><a href="#">Được xem nhiều nhất</a></dd>
+      <dd><a href="#">Liên hệ</a></dd>
+      <dd><a href="#">Góp ý</a></dd>
+      <dd><a href="#">Chăm sóc khách hàng</a></dd>
+      <dd><a href="#">Điều khoản</a></dd>
+      <dd class="last"><a href="#"></a></dd>
+      <dt>Search Your Favourite Movie</dt>
+      <dd class="searchform">
+        <form action="#" method="get">
+          <div>
+            <select name="cat">
+              <option value="-" selected="selected">0 - 100.000 </option>
+              <option value="-" selected="selected">100.000 - 200.000</option>
+              <option value="-" selected="selected">200.000 - 500.000</option>
+              <option value="-" selected="selected">Trên 500.000</option>
+              <option value="-" selected="selected">Tất cả</option>
+              <option value="-">------------</option>
+            </select>
+          </div>
+          <div>
+            <input name="author_search" type ="text" placeholder="Tác giả" class="text"/>
+          </div>
+          <div class="softright">
+            <input type="image" src="/images/btn_search.gif" />
+          </div>
+        </form>
+      </dd>
+    </dl>
+    <div id="body">
+      <div class="inner">
+        <div class="span9">
+          {{{body}}}
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer"> Web design by <a href="http://www.freewebsitetemplates.com">free website templates</a> &nbsp;
+      <div id="footnav"> <a href="#">Legal</a> | <a href="/">Trang chủ</a> </div>
+      <!-- end footnav -->
+    </div>
+    <!-- end footer -->
+  </div>
+  <!-- end inner -->
+</div>
+<!-- end wrapper -->
+</body>
+</html>
