@@ -27,7 +27,7 @@ exports.index = async (req, res, next) => {
          hasPage: pageNumber<=bookTotal,
          nextPage: pageNumber+1,
          prevPage: pageNumber-1,
-         lastPage: Math.floor(bookTotal/itemPerPage),
+         lastPage: Math.floor((bookTotal+itemPerPage)/itemPerPage),
          itemPerPage,
          pageNumber,
          link,
