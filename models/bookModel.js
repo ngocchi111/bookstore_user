@@ -2,12 +2,16 @@
 const {db} = require('../dal/db');
 const { ObjectId, Int32} = require('mongodb');
 
-exports.list = async () => {
-    console.log('model db');
+exports.list = async (filter, pageNumber, itemPerPage) => {
     const booksCollection = db().collection('books');
-    const books = await booksCollection.find({status :Int32(1)}).toArray();
-    console.dir(books);
+    const books = await booksCollection.find(filter).limit(itemPerPage).skip(itemPerPage*(pageNumber-1)).toArray();
     return books;
+}
+
+exports.count= async (filter) =>{
+    const booksCollection = db().collection('books');
+    const count = await booksCollection.count(filter);
+    return count;
 }
 
 exports.get = async (id) => {
