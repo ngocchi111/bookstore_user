@@ -1,0 +1,24 @@
+<form method="POST">
+    <input readonly value="{{blance}}" name="blance" id="blance">
+    <br>
+    <input type="button" style="cursor: pointer;" value="Thêm 10 000 vnd" onclick="add(10)">
+    <br>
+    <input type="button" style="cursor: pointer;" value="Thêm 20 000 vnd" onclick="add(20)">
+    <br>
+    <input type="button" style="cursor: pointer;" value="Thêm 50 000 vnd" onclick="add(30)">
+    <br>
+    <input type="button" style="cursor: pointer;" value="Thêm 100 000 vnd" onclick="add(100)">
+    <br>
+    <input type="button" style="cursor: pointer;" value="Thêm 200 000 vnd" onclick="add(200)">
+    <br>
+    <button type="submit" style="cursor: pointer;">Lưu</button>
+</form>
+
+<script>
+    function add(x)
+    {
+        var blance = document.getElementById("blance").value;
+        blance = parseInt(blance) + parseInt(x)*1000;
+        document.getElementById("blance").value=blance;
+    }
+</script>

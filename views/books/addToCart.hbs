@@ -1,0 +1,24 @@
+<form method="POST">
+<ul>
+      <img src="{{cover}}" style="width:300px; height:350px">
+      <h1>{{title}}</h1>
+      <p><strong> {{basePrice}} VND</strong></p>
+      <p>Số lượng</p>
+      <input type="number" id="quantity" name="quantity" min="1" max="1000" value="1" onchange="Tinh()">
+      <p>Tổng tiền:  <a id="result" name="result">{{basePrice}}</a> VND</p>
+      <input type="hidden" value="{{_id}}" name="id">
+      <input type="hidden" name="basePrice" value="{{basePrice}}" id="basePrice">
+      <input type="hidden" name="title" value="{{title}}">
+      <button type="submit" style="cursor: pointer;">Thêm</button>
+      <a href="/books"><input type="button" style="cursor: pointer;" value="Huỷ"></a>
+</ul>
+</form>
+<script>
+    function Tinh()
+    {
+        const x=document.getElementById("quantity").value;
+        const y=document.getElementById("basePrice").value;
+        const z= parseInt(x)*parseInt(y);
+	    document.getElementById("result").innerHTML=z;
+    }
+</script>

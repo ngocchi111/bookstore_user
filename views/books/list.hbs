@@ -1,0 +1,56 @@
+<form method="GET">
+      <input type="text" id="q" name="q">
+      <select id="cat" name="cat">
+            <option value="">Thể loại</option>
+                  {{#each catalogs}}
+                  <option value="{{catalog}}">{{catalog}}</option>
+                  {{/each}}
+      </select>
+      <select id="author" name="author">
+            <option value="">Tác giả</option>
+                  {{#each authors}}
+                  <option value="{{author}}">{{author}}</option>
+                  {{/each}}
+      </select>
+      <button type="submit">Tìm kiếm</button>
+</form>
+<br>
+<ul>
+  {{#each books}}
+<div class="templatemo_product_box">
+          <h1 style="color:white">{{title}}<br> <span style="color: yellow;">({{author}})</span></h1>
+   	      <a href="/books/detail/{{_id}}"><img src="{{cover}}" style="width:100px; height:150px"></a>
+          <div class="product_info">
+                <h3>{{basePrice}} VND</h3>
+            <div class="add_button"><a href="/books/addToCart/{{_id}}">Thêm vào giỏ hàng</a></div>
+            <div class="detail_button"><a href="/books/detail/{{_id}}">Chi tiết</a></div>
+          </div>
+</div>
+            
+    <div class="cleaner_with_width">&nbsp;</div>
+  {{/each}}
+</ul>          
+
+
+<main>
+    {{#if hasPrevPage}}
+        {{#if _status}}
+        <a href="/books?page=1{{link}}"><h1> << </h1></a>
+        <a href="/books?page={{prevPage}}{{link}}"><h1> {{prevPage}} </h1></a>
+        {{else}}
+        <a href="/books?page=1{{link}}"><h1> << </h1></a>
+        <a href="/books?page={{prevPage}}{{link}}"><h1> {{prevPage}} </h1></a>
+        {{/if}}
+    {{/if}}
+    {{#if hasPage}}<h1 style="color: blue;">{{pageNumber}}</h1>{{/if}}
+    {{#if hasNextPage}}
+        {{#if _status}}
+        <a href="/books?page={{nextPage}}{{link}}"><h1> {{nextPage}} </h1></a>
+        <a href="/books?page={{lastPage}}{{link}}"><h1> >> </h1></a>
+        {{else}}
+        <a href="/books?page={{nextPage}}{{link}}"><h1> {{nextPage}} </h1></a>
+        <a href="/books?page={{lastPage}}{{link}}"><h1> >> </h1></a>
+        {{/if}}
+    {{/if}}
+    
+</main>

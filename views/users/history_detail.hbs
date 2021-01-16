@@ -1,0 +1,13 @@
+<input readonly style="cursor: default;" value="Tác phẩm" size="42px">
+<input readonly style="cursor: default;" value="Giá" size="10px">
+<input readonly style="cursor: default;" value="Số lượng" size="10px">
+<input readonly style="cursor: default;" value="Thành giá" size="10px">
+{{#each cart}}
+    <input readonly style="cursor: default;" value="{{title}}" size="42px">
+    <input readonly style="cursor: default;" value="{{basePrice}}" size="10px">
+    <input readonly style="cursor: default;" value="{{quantity}}" size="10px">
+    <input readonly style="cursor: default;" value="{{totalPrice}}" size="10px">
+    <a href="/carts/detail/{{book}}"><input type="button" style="cursor: pointer;" value="Sửa"></a>
+{{/each}}
+<div align="right">Tổng giá: {{total}}</div>
+<a href="/users/history"><input type="button" style="cursor: pointer;" value="Quay lại" align="right"></a>

@@ -1,0 +1,66 @@
+<ul>
+      <img src="{{book.cover}}" style="width:300px; height:350px">
+      <h1>{{book.title}}</h1>
+      <p>Tác giả: {{book.author}}</p>
+      <p>Thể loại: {{book.catalog}}</p>
+      <p><strong> {{book.basePrice}} VND</strong></p>
+      <p>{{book.detail}}</p>
+      <div class="add_button"><a href="/books/addToCart/{{book._id}}">Thêm vào giỏ hàng</a></div>
+</ul>
+<br>
+<form method="POST">
+<h1> Bình luận </h1>
+{{#if user}}
+{{else}}
+<p><strong>Tên</strong></p>
+<input type="text" required placeholder="Nhập tên" name="name">
+{{/if}}
+<textarea required placeholder="Viết bình luận..." id="comment" name="comment" rows="3" cols="100%"></textarea>
+<br><input type="hidden" value="{{book._id}}" name="id"><input type="hidden" value="{{book.title}}" name="title">
+<button style="cursor: pointer;" type="submit">Thêm bình luận</button>
+{{#each comments}}
+  <p><strong>{{name}} ({{dateTime}}): {{comment}} </strong></p>
+{{/each}}
+</form>
+
+  <main>
+    <input type="hidden" name="page" id="page">
+  {{#if hasPrevPage}}
+        <a href="/books/detail/{{book._id}}?page=1"><button style="cursor: pointer;"  onclick="page(1)"> << </button></a>
+        <a href="/books/detail/{{book._id}}?page={{prevPage}}"><button style="cursor: pointer;"  onclick="page({{prevPage}})">{{prevPage}}</button></a>
+    {{/if}}
+    {{#if hasPage}}<button disabled>{{pageNumber}}</button>{{/if}}
+    {{#if hasNextPage}}
+        <a href="/books/detail/{{book._id}}?page={{nextPage}}"><button style="cursor: pointer;"  onclick="page({{nextPage}})">{{nextPage}}</button></a>
+        <a href="/books/detail/{{book._id}}?page={{lastPage}}"><button style="cursor: pointer;"  onclick="page({{lastPage}})"> >> </button></a>
+    {{/if}}
+    </main>
+
+<br>
+<h1> Sách liên quan </h1>
+<form>
+<ul>
+  {{#each books}}
+  {{#if isBook}}
+  <div class="templatemo_product_box">
+          <h1 style="color:white">{{title}}<br> <span style="color: yellow;">({{author}})</span></h1>
+   	      <a href="/books/detail/{{_id}}"><img src="{{cover}}" style="width:100px; height:150px"></a>
+          <div class="product_info">
+                <h3>{{basePrice}} VND</h3>
+          <div class="add_button"><a href="/books/addToCart/{{_id}}">Thêm vào giỏ hàng</a></div>
+          <div class="detail_button"><a href="/books/detail/{{_id}}">Chi tiết</a></div>
+          </div>
+  </div>
+    <div class="cleaner_with_width">&nbsp;</div>
+  {{/if}}
+  {{/each}}
+</ul> 
+</form>
+
+<script>
+  function page(x)
+  {
+    document.getElementById("page").value = x;
+    return true;
+  }
+</script>

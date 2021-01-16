@@ -1,0 +1,16 @@
+<main>
+    <form method="POST" class="form" id="form_sign_in">
+        <h3>ĐĂNG NHẬP</h3>
+        <h2>Tên đăng nhập</h2>
+        <input required="" type="text" name="username" id="username" class="form-control"/>
+        <h2>Mật khẩu</h2>
+        <input required="" type="password" name="password" id="password" class="form-control"/>
+        {{#if message}}
+        <br/>
+        <noti>Tên đăng nhập hoặc mật khẩu không chính xác</noti>
+        <br/>
+        {{/if}}
+    <input type="submit" value="Đăng nhập">
+    </form>
+</main>
+    

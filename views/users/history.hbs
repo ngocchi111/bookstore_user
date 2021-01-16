@@ -1,0 +1,21 @@
+<input readonly style="cursor: default;" value="Ngày mua" size="30px">
+<input readonly style="cursor: default;" value="Tổng tiền" size="30px">
+<input readonly style="cursor: default;"  size="12px">
+{{#each historys}}
+<input readonly style="cursor: default;" value="{{dateTime}}" size="30px">
+<input readonly style="cursor: default;" value="{{total}}" size="30px">
+<a href="/users/history/{{_id}}"><input readonly style="cursor: default;" value="Chi tiết" size="12px"></a>
+{{/each}}
+
+
+<main>
+  {{#if hasPrevPage}}
+        <a href="/users/history?page=1"><button style="cursor: pointer;"  onclick="page(1)"> << </button></a>
+        <a href="/users/history?page={{prevPage}}"><button style="cursor: pointer;"  onclick="page({{prevPage}})">{{prevPage}}</button></a>
+    {{/if}}
+    {{#if hasPage}}<button disabled>{{pageNumber}}</button>{{/if}}
+    {{#if hasNextPage}}
+        <a href="/users/history?page={{nextPage}}"><button style="cursor: pointer;"  onclick="page({{nextPage}})">{{nextPage}}</button></a>
+        <a href="/users/history?page={{lastPage}}"><button style="cursor: pointer;"  onclick="page({{lastPage}})"> >> </button></a>
+    {{/if}}
+</main>

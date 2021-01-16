@@ -1,0 +1,18 @@
+<form method="POST">
+    {{#if isImage}}
+        <image src="{{image}}"></image>
+    {{else}}
+        <image src="/images/avatar.jpg" style="width:200px;height:200px"></image>
+    {{/if}}
+    <input type="file" name="image">
+    </br>
+    <b>Họ và tên</b> </br>
+    <input value="{{name}}" name="name" type="text">
+    </br><b>Ngày sinh</b></br>
+    <input type="date" value="{{birthday}}" name="birthday">
+    </br><b>Địa chỉ</b> </br>
+    <input value="{{address}}" type="text" name="address">
+    </br>
+    <button type="submit" style="cursor: pointer">Lưu</button></a>
+    <a href ="/users/rePassword"><input type="button" style="cursor: pointer" value="Đổi mật khẩu"></a>
+</form>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Online Book store</title>
+<link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--  Free CSS Templates from www.templatemo.com -->
+<div id="templatemo_container">
+	<div id="templatemo_menu">
+    	<ul>
+            <li><a href="/" class="current">Trang chủ</a></li>
+            <li><a href="/books">Danh sách sản phẩm</a></li>   
+            {{#if user}}
+            <li><a href="/users/infor">Tài khoản</a></li>
+            <li><a href="/users/logout">Đăng xuất</a></li>
+            {{else}}
+            <li><a href="/users/signin">Đăng nhập</a></li>  
+            <li><a href="/users/signup">Đăng ký</a></li> 
+            {{/if}}
+    	</ul>
+    </div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+      <img src="/images/online-book-store.jpg" style="width:960px;height:240px">
+    	<div id="templatemo_special_offers">
+        </div>
+        <div id="templatemo_new_books">
+        </div>
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_content">
+    	
+        <div id="templatemo_content_left">
+        	<div class="templatemo_content_left_section">
+            	<h1>Mục</h1>
+                <ul>
+                    <li><a href="/books">Danh sách sản phẩm</a></li>
+                    <li><a href="/users/infor">Tài khoản</a></li>
+                    <li><a href="/carts">Giỏ hàng</a></li>
+                    <li><a href="/users/history">Lịch sử mua hàng</a></li>
+                    <li><a href="/"></a></li>
+                    <li><a href="/"></a></li>
+                    <li><a href="/"></a></li>
+                    <li><a href="/"></a></li>
+                    <li><a href="/"></a></li>
+            	</ul>
+            </div>
+			<div class="templatemo_content_left_section">
+            	<h1>Tìm kiếm</h1>
+                    <select id="catalog">
+                        <option value="">Thể loại</option>
+                        <option value="Tiểu Thuyết">Tiểu thuyết</option>
+                        <option value="Truyện ngắn">Truyện ngắn</option>
+                        <option value="Truyện teen - Tuổi học trò">Truyện teen - Tuổi học trò</option>
+                        <option value="Tự giúp bản thân">Tự giúp bản thân</option>
+                        <option value="Truyện thơ">Truyện thơ</option>
+                        <option value="Phiêu lưu - Tưởng tượng - Thần Bí">Phiêu lưu - Tưởng tượng - Thần Bí</option>
+                        <option value="Tâm lý">Tâm lý</option>
+                        <option value="Kỹ năng sống">Kỹ năng sống</option>
+                        <option value="Sơ khai văn học">Sơ khai văn học</option>
+                        <option value="Văn học Việt Nam">Văn học Việt Nam</option>
+                        <option value="Tuỳ bút">Tuỳ bút</option>
+                        <option value="Hồi ký">Hồi ký</option>
+                    </select>
+                    <input id="search" type ="text"/>
+                    <input type="image" onclick="search()" src="/images/btn_search.gif"/>
+            </div>
+            
+        </div> <!-- end of content left -->
+        
+        <div id="templatemo_content_right">
+            {{{body}}}
+        </div> <!-- end of content right -->
+    
+    	<div class="cleaner_with_height">&nbsp;</div>
+    </div> <!-- end of content -->
+    
+    <div id="templatemo_footer">
+	        <a href="/">Trang chủ</a> | <a href="/Books">Danh sách sản phẩm</a>
+            
+        <!-- Credit: www.templatemo.com -->	</div> 
+</div> <!-- end of container -->
+</body>
+</html>
+
+<script>
+ function search()
+ {
+    var q = document.getElementById("search").value;
+    var cat=document.getElementById("catalog").value;
+    if (q!="")
+    {
+        if (cat!="")
+            window.location="/books?q="+q+"&cat="+cat;
+        else
+            window.location="/books?q="+q;
+    }
+    else
+    {
+        if (cat!="")
+           window.location="/books?cat="+cat;
+        else
+            window.location="/books";
+    }
+ }
+</script>

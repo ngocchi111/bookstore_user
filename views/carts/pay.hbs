@@ -1,0 +1,12 @@
+<form method="POST">
+    <input type="hidden" value="{{total}}" name="total">
+    {{#if isEnought}}
+        <div>Số dư: {{N_blance}}</div>
+        <button style="cursor: pointer;" type="submit">Thanh toán</button>
+        <a href="/carts"><input type="button" style="cursor: pointer" value="Quay lại"></a>
+    {{else}}
+        <div>Không đủ tiền</div>
+        <a href="/users/moreMoney"><input type="button" style="cursor: pointer" value="Nạp thêm tiền"></a>
+        <a href="/carts"><input type="button" style="cursor: pointer" value="Quay lại"></a>
+    {{/if}}
+</form>

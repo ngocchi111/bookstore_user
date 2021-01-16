@@ -1,0 +1,21 @@
+<form>
+{{#if isImage}}
+    <image src="{{image}}"></image>
+{{else}}
+    <image src="/images/avatar.jpg" style="width:200px;height:200px"></image>
+{{/if}}
+</br>
+<b>Họ và tên</b> </br>
+<input readonly value="{{name}}">
+</br><b>Ngày sinh</b></br>
+<input type="date" value="{{birthday}}" readonly>
+</br><b>Địa chỉ</b> </br>
+<input readonly value="{{address}}">
+</br><b>Số dư</b></br>
+<input readonly value="{{blance}}">
+<a href="/users/moreMoney"><input type="button" style="cursor: pointer" value="Nạp"></a>
+</br>
+</br>
+<a href ="/users/updateInfor"><input type="button" style="cursor: pointer" value="Sửa đổi thông tin"></a>
+<a href ="/users/history"><input type="button" style="cursor: pointer" value="Lịch sử mua hàng"></a>
+</form>
